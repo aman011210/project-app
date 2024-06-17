@@ -1,0 +1,323 @@
+
+
+* {
+   
+    box-sizing: border-box;
+}
+
+.home__scroll-arrow:hover {
+    color: #333/* Your hover color */;
+  }
+  
+  .home__scroll {
+    display: none;
+    padding-top: 80px;
+    padding-left: 150px;
+    display:flex;
+    align-items: center; /* Align items vertically */
+  }
+:root {
+    --big-font-size: 38px;
+    --mb-0-25: 5px;
+}
+
+.home_content {
+    grid-template-columns: 116px repeat(2, 1fr);
+    padding-top: 5rem;
+    column-gap: 2rem;
+    align-items: center;
+    
+}
+
+.home_social {
+    display: grid;
+    grid-template-columns: max-content;
+    row-gap: 1rem;
+    
+}
+
+.home_social-icon {
+    font-size: 1.25rem;
+    color: var(--title-color);
+}
+
+.home_social-icon:hover {
+    color: var(--title-color-dark);
+}
+
+.home_title {
+    font-size: var(--big-font-size);
+    
+    font-weight: bold;
+    color: #444;
+    
+}
+
+.home_subtitle {
+    position: relative;
+    font-size: var(--h3-font-size);
+    padding-left: 5.4rem;
+    font-weight: var(--font-normal);
+    margin-right: var(--mb-1);
+    color: #444;
+    
+}
+
+.home_subtitle::before {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 1px;
+    background-color: var(--text-color);
+    left: 0;
+    top: 1rem;
+    
+}
+
+
+.home_description {
+    
+    line-height: 1.5;
+    
+    margin-top: 1rem;
+  
+    margin-bottom: var(--mb-3);
+}
+
+.home__hand {
+    width: 25px;
+    height: 25px;
+    margin-left: 0.4rem;
+}
+
+.home_img {
+    background: url(../../assets/profile.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 9px rgb(255 255 255 / 30%);
+    order: 1;
+    justify-self: center;
+    width: 300px;
+    height: 300px;
+    animation: profile_animate 8s ease-in-out infinite 1s;
+}
+
+@keyframes profile_animate {
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+.button--flex {
+    position: absolute;
+    margin-top: 21px;
+    display: flex;
+    align-items: center;
+}
+
+
+.wheel {
+    animation: scroll 2s ease infinite;
+    
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(3.75rem);
+    }
+}
+
+.home__scroll-name {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    margin-right: var(--mb-0-25);
+    margin-left: 2px;
+    
+}
+
+.home__scroll-arrow {
+    font-size: 1.25rem;
+    
+}
+
+/* For screens up to 992px */
+@media screen and (max-width: 992px) {
+    .home_content {
+      
+      grid-template-columns: 100px repeat(2,1fr); /* Single column layout */
+      column-gap: 1.25rem; /* Add some vertical spacing between elements */
+      
+    }
+    
+    .home__hand {
+        width: 20px; /* Adjust hand icon width */
+        height: 20px; /* Adjust hand icon height */
+      }
+  
+    .home_subtitle {
+      padding-left: 3.75rem; /* Remove left padding for subtitles */
+      margin-bottom: var(--mb-1); /* Add some bottom margin */
+    }
+
+    .home_subtitle::before {
+        width: 40px; /* Let the width adjust automatically */
+        top:1rem;
+      }
+  
+    .home_description {
+      max-width: initial; /* Allow the description to expand */
+      margin-bottom: var(--mb-2-5); /* Add some bottom margin */
+    }
+  
+    .home_img {
+      justify-self: center; /* Center the image horizontally */
+      width: 250px; /* Set a fixed width for the image */
+      height: 250px; /* Set a fixed height for the image */
+      box-shadow: inset 0 0 0 8px rgb(255 255 255 / 30%);
+      
+    }
+    .button--flex {
+        
+        width: 160px; /* Set a fixed width for the button */
+        height: 60px; /* Set a fixed height for the button */
+    }
+    
+  
+    .home__scroll {
+        display: none;
+        padding-top: 100px;;
+        
+        align-items: center; /* Align items vertically */
+      }
+  }
+  
+  /* For screens up to 768px */
+  @media screen and (max-width: 768px) {
+    .home_content {
+        
+        grid-template-columns: 0.5fr 3fr; /* Set grid template columns */
+        padding-top: 2rem; /* Add some top padding */
+    }
+    
+  
+    .home_img {
+        margin-inline: 10px;
+    margin-top: 45px;
+        order: initial;
+        justify-self: initial;
+      
+    }
+
+    .home_data{
+        grid-column:1/3;
+        margin: 9px;
+    }
+    .home_img {
+        box-shadow: inset 0 0 0 6px rgb(255 255 255 / 30%);
+        width:200px;
+        height:200px
+      
+    }
+   
+    .home_title {
+      
+        margin-inline: 3px;
+    }
+    .home__scroll {
+        display: none;
+        padding-top: 100px;;
+        
+        align-items: center; /* Align items vertically */
+      }
+  }
+ 
+  
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #333; /* Dark grey button background color */
+    color: #fff; /* White button text color */
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Adjust the margin top to move the button down */
+  }
+  
+  
+  /* Hover effect */
+  .button:hover {
+    background-color: #555; /* Darker grey background color on hover */
+  }
+  
+  
+  
+  @media screen and (max-width: 350px) {
+    .home_img{
+
+        width: 180px;
+        height: 180px;
+    }
+
+    .home__hand{
+        width: 25px;
+        height: 25px;
+
+    }
+
+    .home_data{
+        grid-column: 1/3;
+    }
+    .home_title {
+      
+        margin-inline: 11px;
+    }
+
+    .home__scroll {
+        display: none;
+        padding-top: 100px;;
+        
+        align-items: center; /* Align items vertically */
+      }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Add styling for the mouse icon */
+
+  
+
+  
+ 

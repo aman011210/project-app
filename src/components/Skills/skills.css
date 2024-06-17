@@ -1,0 +1,89 @@
+.skills__container {
+  display: grid;
+  grid-template-columns: repeat(2, 350px);
+  gap: 3rem;
+  justify-content: center;
+}
+
+.skills__content {
+  background-color: var(--container-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 2rem 2rem;
+  border-radius: 1.25rem;
+}
+
+.skills__title {
+  padding-bottom: 20px;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  text-align: center;
+  margin-bottom: var(--mb-1-5);
+}
+
+.skills__name {
+  font-size: var(--small-font-size);
+  font-weight: bold;
+  line-height: 18px;
+  color: #444;
+}
+
+.skills__box {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 2.5rem;
+}
+
+.skills__group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-start;
+  row-gap: 1rem;
+}
+
+.skills__data {
+  display: flex;
+  column-gap: 0.5rem;
+  flex-direction: row;
+}
+
+.skill.bx-badge-check {
+  font-size: 1rem;
+  color: var(--title-color);
+}
+
+.skills__level {
+  font-size: var(--small-font-size);
+  font-weight: normal;
+  color: #777;
+}
+
+/* Adjustments for smaller screens */
+
+@media screen and (max-width: 992px) {
+  .skills__container {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Use auto-fit and minmax for flexible columns */
+      gap: 2rem; /* Reduce gap for smaller screens */
+  }
+  .skills__content {
+      padding: 1.5rem; /* Reduce padding */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .skills__container {
+      grid-template-columns: 1fr; /* Single column layout */
+      row-gap: 2rem; /* Increase row gap */
+  }
+  .skills__content {
+      padding: 1.5rem; /* Reduce padding */
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .skills__box {
+      column-gap: 1.25rem; /* Reduce column gap */
+  }
+  .skills__name {
+      font-size: var(--small-font-size); /* Ensure consistent font size */
+  }
+}
